@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'services.apps.ServicesConfig',
     'blog.apps.BlogConfig',
+    'RS.apps.RsConfig'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'RS.context_processors.redes_sociales'
             ],
         },
     },
@@ -80,12 +83,8 @@ WSGI_APPLICATION = 'webempresa.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Cafeteria',          # Nombre de la base de datos que creaste
-        'USER': 'postgres',             # Usuario de PostgreSQL (ej. postgres)
-        'PASSWORD': '1234',      # Tu contraseña de PostgreSQL
-        'HOST': 'localhost',              # O 127.0.0.1
-        'PORT': '5432',                   # Puerto por defecto de PostgreSQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
